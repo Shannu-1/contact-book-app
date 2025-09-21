@@ -22,7 +22,7 @@ export default function ContactList() {
   const fetchContacts = async (p = page) => {
     try {
       setLoading(true);
-      const res = await axios.get(`http://localhost:5000/contacts?page=${p}&limit=${limit}`);
+      const res = await axios.get(`https://contact-book-app-yo99.onrender.com/contacts?page=${p}&limit=${limit}`);
       setContacts(res.data.contacts);
       setTotal(res.data.total);
       setLoading(false);
@@ -47,7 +47,7 @@ export default function ContactList() {
 
   const handleDelete = async (id) => {
     if (!window.confirm('Delete this contact?')) return;
-    await axios.delete(`http://localhost:5000/contacts/${id}`);
+    await axios.delete(`https://contact-book-app-yo99.onrender.com/contacts/${id}`);
     fetchContacts(page);
   };
 
