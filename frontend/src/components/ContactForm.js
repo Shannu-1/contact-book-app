@@ -22,7 +22,7 @@ export default function ContactForm() {
     const v = validate();
     if (v) return setError(v);
     try {
-      await axios.post('http://localhost:5000/contacts', { name, email, phone });
+      await axios.post('https://contact-book-app-yo99.onrender.com/contacts', { name, email, phone });
       setName(''); setEmail(''); setPhone('');
       window.dispatchEvent(new Event('contactsChanged'));
     } catch (err) {
